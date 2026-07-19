@@ -1,0 +1,81 @@
+{
+  "dia": "7_final",
+  "dataset": {
+    "total_matches": 128,
+    "train_year": 2018,
+    "test_year": 2022,
+    "train_size": 64,
+    "test_size": 64,
+    "features": 16
+  },
+  "models": {
+    "LogReg (baseline)": {
+      "accuracy": 0.5625,
+      "home_pct": 0.40625,
+      "draw_pct": 0.203125,
+      "away_pct": 0.390625
+    },
+    "XGBoost": {
+      "accuracy": 0.484375,
+      "home_pct": 0.375,
+      "draw_pct": 0.125,
+      "away_pct": 0.5
+    },
+    "XGBoost Otimizado": {
+      "accuracy": 0.5,
+      "home_pct": 0.375,
+      "draw_pct": 0.109375,
+      "away_pct": 0.515625
+    },
+    "LightGBM": {
+      "accuracy": 0.5625,
+      "home_pct": 0.40625,
+      "draw_pct": 0.171875,
+      "away_pct": 0.421875
+    },
+    "LightGBM Balanced": {
+      "accuracy": 0.53125,
+      "home_pct": 0.390625,
+      "draw_pct": 0.203125,
+      "away_pct": 0.40625
+    },
+    "Ensemble (soft)": {
+      "accuracy": 0.5625,
+      "home_pct": 0.40625,
+      "draw_pct": 0.171875,
+      "away_pct": 0.421875
+    }
+  },
+  "best_model": "Tied: LogReg, LightGBM, Ensemble",
+  "best_accuracy": 0.5625,
+  "real_distribution": {
+    "Home": 0.453125,
+    "Draw": 0.234375,
+    "Away": 0.3125
+  },
+  "feature_importance_lightgbm": {
+    "rank_num_diff": 86,
+    "home_rank_pts": 76,
+    "rank_x_round": 70,
+    "home_avg_scored": 60,
+    "away_rank_pts": 45,
+    "rank_pts_diff": 43,
+    "away_avg_conceded": 32,
+    "away_avg_scored": 26,
+    "home_avg_conceded": 25,
+    "avg_conceded_diff": 23
+  },
+  "errors": {
+    "total": 28,
+    "out_of": 64,
+    "pct": 0.4375,
+    "common_pattern": "Draws classified as Home/Away"
+  },
+  "key_findings": [
+    "Ranking FIFA is strongest predictor (rank_num_diff, home_rank_pts)",
+    "Home advantage exists but partial (43% vs historical 46%)",
+    "Draws remain unsolved (recall < 50% for all models)",
+    "Small dataset (128 matches) limits ML performance",
+    "Feature engineering adds marginal value over ranking alone"
+  ]
+}

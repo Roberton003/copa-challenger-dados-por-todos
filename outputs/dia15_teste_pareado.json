@@ -1,0 +1,77 @@
+{
+  "best_model": "LogReg (isotonic)",
+  "accuracies": {
+    "LogReg (isotonic)": 0.578125,
+    "LogReg (sigmoid)": 0.578125,
+    "XGBoost (isotonic)": 0.484375,
+    "XGBoost (sigmoid)": 0.5,
+    "LightGBM (isotonic)": 0.546875,
+    "LightGBM (sigmoid)": 0.5625
+  },
+  "n_teste": 64,
+  "mcnemar": {
+    "LogReg (sigmoid)": {
+      "discordantes": 0,
+      "b_best_ganha": 0,
+      "c_outro_ganha": 0,
+      "p_value": 1.0
+    },
+    "XGBoost (isotonic)": {
+      "discordantes": 12,
+      "b_best_ganha": 9,
+      "c_outro_ganha": 3,
+      "p_value": 0.14599609375
+    },
+    "XGBoost (sigmoid)": {
+      "discordantes": 9,
+      "b_best_ganha": 7,
+      "c_outro_ganha": 2,
+      "p_value": 0.1796875
+    },
+    "LightGBM (isotonic)": {
+      "discordantes": 2,
+      "b_best_ganha": 2,
+      "c_outro_ganha": 0,
+      "p_value": 0.5
+    },
+    "LightGBM (sigmoid)": {
+      "discordantes": 1,
+      "b_best_ganha": 1,
+      "c_outro_ganha": 0,
+      "p_value": 1.0
+    }
+  },
+  "bootstrap_delta_acc": {
+    "LogReg (sigmoid)": {
+      "delta_mean": 0.0,
+      "ci_95_low": 0.0,
+      "ci_95_high": 0.0,
+      "ci_contains_zero": true
+    },
+    "XGBoost (isotonic)": {
+      "delta_mean": 0.09345,
+      "ci_95_low": -0.015625,
+      "ci_95_high": 0.203125,
+      "ci_contains_zero": true
+    },
+    "XGBoost (sigmoid)": {
+      "delta_mean": 0.078828125,
+      "ci_95_low": 0.0,
+      "ci_95_high": 0.171875,
+      "ci_contains_zero": true
+    },
+    "LightGBM (isotonic)": {
+      "delta_mean": 0.0311875,
+      "ci_95_low": 0.0,
+      "ci_95_high": 0.078125,
+      "ci_contains_zero": true
+    },
+    "LightGBM (sigmoid)": {
+      "delta_mean": 0.01585,
+      "ci_95_low": 0.0,
+      "ci_95_high": 0.046875,
+      "ci_contains_zero": true
+    }
+  },
+  "metodologia": "McNemar exato (binomial nas discordâncias pareadas) e bootstrap pareado (10000 reamostras) do delta de acurácia, ambos sobre as MESMAS 64 previsões de teste (2022) por combo modelo×calibração — corrige a limitação de comparar só ICs univariados sobrepostos (dia10/RELATORIO_FINAL §9.1)."
+}

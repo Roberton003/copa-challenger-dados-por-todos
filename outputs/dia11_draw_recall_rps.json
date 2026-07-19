@@ -1,0 +1,40 @@
+{
+  "balanced_vs_default": {
+    "LogReg (balanced, j\u00e1 era)": {
+      "accuracy": 0.5625,
+      "rps": 0.20337820387502517,
+      "draw_recall": 0.0
+    },
+    "XGBoost (default)": {
+      "accuracy": 0.5,
+      "rps": 0.22018828872152513,
+      "draw_recall": 0.0
+    },
+    "XGBoost (balanced)": {
+      "accuracy": 0.484375,
+      "rps": 0.22501003260622288,
+      "draw_recall": 0.26666666666666666
+    },
+    "LightGBM (default)": {
+      "accuracy": 0.5625,
+      "rps": 0.20411232419487083,
+      "draw_recall": 0.0
+    },
+    "LightGBM (balanced)": {
+      "accuracy": 0.578125,
+      "rps": 0.20236160550783827,
+      "draw_recall": 0.0
+    }
+  },
+  "best_by_rps": "LightGBM (balanced)",
+  "draw_threshold_chosen": 0.19999999999999998,
+  "draw_threshold_metrics": {
+    "accuracy": 0.5,
+    "draw_recall": 0.3333333333333333
+  },
+  "final_prediction_distribution": {
+    "Draw": 33,
+    "Away": 23,
+    "Home": 16
+  }
+}

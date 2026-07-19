@@ -1,0 +1,30 @@
+{
+  "mlp_pytorch": {
+    "accuracy_mean": 0.465625,
+    "accuracy_std": 0.04728983109506736,
+    "draw_recall_mean": 0.31333333333333335,
+    "draw_recall_std": 0.11175369742826806,
+    "rps_mean": 0.2554816666163881,
+    "rps_std": 0.006034505545226394,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "architecture": "5->16->8->3, ReLU, dropout 0.3"
+  },
+  "classic_ml_reference": {
+    "model": "LogReg (sigmoid)",
+    "accuracy": 0.578,
+    "draw_recall": 0.0,
+    "rps": 0.2019,
+    "source": "outputs/dia10_recalibracao_rps.json"
+  }
+}

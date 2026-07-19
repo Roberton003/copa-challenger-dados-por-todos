@@ -1,0 +1,63 @@
+{
+  "calibration_comparison": {
+    "LogReg (isotonic)": {
+      "accuracy": 0.578125,
+      "rps": 0.2053848997825462,
+      "pct_probs_extremas": 0.08333333333333333
+    },
+    "LogReg (sigmoid)": {
+      "accuracy": 0.578125,
+      "rps": 0.20185775424455404,
+      "pct_probs_extremas": 0.0
+    },
+    "XGBoost (isotonic)": {
+      "accuracy": 0.484375,
+      "rps": 0.22687377701694403,
+      "pct_probs_extremas": 0.0625
+    },
+    "XGBoost (sigmoid)": {
+      "accuracy": 0.5,
+      "rps": 0.21978609536664864,
+      "pct_probs_extremas": 0.0
+    },
+    "LightGBM (isotonic)": {
+      "accuracy": 0.546875,
+      "rps": 0.20620889520487828,
+      "pct_probs_extremas": 0.0
+    },
+    "LightGBM (sigmoid)": {
+      "accuracy": 0.5625,
+      "rps": 0.203216428033717,
+      "pct_probs_extremas": 0.0
+    }
+  },
+  "best_by_rps": "LogReg (sigmoid)",
+  "multi_seed_sigmoid": {
+    "LogReg": {
+      "mean": 0.578125,
+      "std": 0.0,
+      "min": 0.578125,
+      "max": 0.578125
+    },
+    "XGBoost": {
+      "mean": 0.5,
+      "std": 0.0,
+      "min": 0.5,
+      "max": 0.5
+    },
+    "LightGBM": {
+      "mean": 0.5625,
+      "std": 0.0,
+      "min": 0.5625,
+      "max": 0.5625
+    }
+  },
+  "features": [
+    "rank_diff",
+    "home_rank",
+    "rank_ratio",
+    "rank_pts_diff",
+    "away_rank"
+  ],
+  "max_prob_2026": 0.681502870366777
+}

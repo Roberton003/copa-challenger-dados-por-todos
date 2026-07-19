@@ -1,0 +1,77 @@
+{
+  "model": "LogReg (baseline)",
+  "accuracy": 0.5666666666666667,
+  "all_models": {
+    "LogReg (baseline)": {
+      "accuracy": 0.5666666666666667,
+      "home_recall": 0.6071428571428571,
+      "draw_recall": 0.46153846153846156,
+      "away_recall": 0.5789473684210527,
+      "pred_home": 0.4166666666666667,
+      "pred_draw": 0.23333333333333334,
+      "pred_away": 0.35
+    },
+    "RandomForest": {
+      "accuracy": 0.43333333333333335,
+      "home_recall": 0.5714285714285714,
+      "draw_recall": 0.0,
+      "away_recall": 0.5263157894736842,
+      "pred_home": 0.5166666666666667,
+      "pred_draw": 0.08333333333333333,
+      "pred_away": 0.4
+    },
+    "GradientBoosting": {
+      "accuracy": 0.45,
+      "home_recall": 0.5357142857142857,
+      "draw_recall": 0.0,
+      "away_recall": 0.631578947368421,
+      "pred_home": 0.4666666666666667,
+      "pred_draw": 0.06666666666666667,
+      "pred_away": 0.4666666666666667
+    },
+    "XGBoost": {
+      "accuracy": 0.4666666666666667,
+      "home_recall": 0.5,
+      "draw_recall": 0.15384615384615385,
+      "away_recall": 0.631578947368421,
+      "pred_home": 0.38333333333333336,
+      "pred_draw": 0.16666666666666666,
+      "pred_away": 0.45
+    },
+    "LightGBM": {
+      "accuracy": 0.5,
+      "home_recall": 0.6071428571428571,
+      "draw_recall": 0.15384615384615385,
+      "away_recall": 0.5789473684210527,
+      "pred_home": 0.48333333333333334,
+      "pred_draw": 0.05,
+      "pred_away": 0.4666666666666667
+    }
+  },
+  "n_features": 19,
+  "features": [
+    "home_rank",
+    "away_rank",
+    "home_rank_pts",
+    "away_rank_pts",
+    "rank_diff",
+    "rank_pts_diff",
+    "rank_ratio",
+    "rank_pts_ratio",
+    "round_num",
+    "rank_x_round",
+    "strength_diff",
+    "is_knockout",
+    "is_final",
+    "h2h_home_wins",
+    "h2h_draws",
+    "h2h_away_wins",
+    "h2h_total",
+    "h2h_home_win_rate",
+    "same_conf"
+  ],
+  "n_train": 64,
+  "n_test": 60,
+  "adversarial_auc": 0.8154,
+  "correction": "Removed rolling form stats (home_form, away_form, etc.) that caused distribution shift"
+}

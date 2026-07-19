@@ -1,0 +1,52 @@
+{
+  "feature_cols": [
+    "rank_diff",
+    "home_rank",
+    "rank_ratio",
+    "rank_pts_diff",
+    "away_rank"
+  ],
+  "n_features": 5,
+  "all_results": {
+    "LogReg (baseline)": {
+      "accuracy": 0.484375,
+      "draw_recall": 0.26666666666666666
+    },
+    "XGBoost (baseline)": {
+      "accuracy": 0.390625,
+      "draw_recall": 0.13333333333333333
+    },
+    "LightGBM (baseline)": {
+      "accuracy": 0.46875,
+      "draw_recall": 0.0
+    },
+    "XGBoost (otimizado)": {
+      "accuracy": 0.515625,
+      "draw_recall": 0.06666666666666667
+    },
+    "LightGBM (otimizado)": {
+      "accuracy": 0.5,
+      "draw_recall": 0.06666666666666667
+    },
+    "LogReg (otimizado)": {
+      "accuracy": 0.546875,
+      "draw_recall": 0.06666666666666667
+    },
+    "XGBoost (calibrado)": {
+      "accuracy": 0.5625,
+      "draw_recall": 0.0
+    },
+    "LightGBM (calibrado)": {
+      "accuracy": 0.515625,
+      "draw_recall": 0.0
+    },
+    "LogReg (calibrado)": {
+      "accuracy": 0.5625,
+      "draw_recall": 0.0
+    }
+  },
+  "best_accuracy": {
+    "name": "XGBoost (calibrado)",
+    "accuracy": 0.5625
+  }
+}

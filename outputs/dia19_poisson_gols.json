@@ -1,0 +1,12 @@
+{
+  "acuracia_teste_2022": 0.515625,
+  "empates_previstos_teste_2022": 0,
+  "quase_empates_teste_2022": 42,
+  "empates_reais_teste_2022": 15,
+  "n_teste_2022": 64,
+  "prob_draw_media_teste_2022": 0.2311450076514966,
+  "empates_previstos_2026": 0,
+  "n_jogos_2026": 72,
+  "prob_draw_media_2026": 0.19216733133443942,
+  "metodologia": "Regressão de Poisson (sklearn PoissonRegressor) separada para gols do mandante e do visitante, mesmas 5 features de ranking do dia10, mesmo split treino=2018/teste=2022. P(Home)/P(Draw)/P(Away) derivadas somando a matriz de probabilidade de placares (gols mandante x gols visitante independentes, Poisson, até 6 gols por lado) - abordagem clássica de modelagem de futebol (Maher 1982). Ataca a limitação documentada de zero empates previstos pela classificação direta H/D/A. Achado: P(Draw) médio sobe pra ~23% (vs. confiança ~0% do classificador), mas a previsão \"dura\" (argmax) ainda não escolhe Draw como resultado mais provável em nenhum jogo - fenômeno conhecido de modelos Poisson independentes subestimarem empates (correção Dixon-Coles 1997 existe pra isso, fora do escopo aqui)."
+}

@@ -1,0 +1,57 @@
+{
+  "split_original": {
+    "LogReg": {
+      "accuracy": 0.578125,
+      "rps": 0.20185775424455404
+    },
+    "XGBoost": {
+      "accuracy": 0.5,
+      "rps": 0.21978609536664864
+    },
+    "LightGBM": {
+      "accuracy": 0.5625,
+      "rps": 0.203216428033717
+    },
+    "Ensemble (média)": {
+      "accuracy": 0.578125,
+      "rps": 0.2047464823777132
+    }
+  },
+  "split_invertido": {
+    "LogReg": {
+      "accuracy": 0.390625,
+      "rps": 0.23576096193029963
+    },
+    "XGBoost": {
+      "accuracy": 0.5,
+      "rps": 0.22592443534663254
+    },
+    "LightGBM": {
+      "accuracy": 0.59375,
+      "rps": 0.203539141068562
+    },
+    "Ensemble (média)": {
+      "accuracy": 0.515625,
+      "rps": 0.2181232658174959
+    }
+  },
+  "kfold_5_estratificado": {
+    "LogReg": {
+      "accuracy_mean": 0.5076923076923077,
+      "accuracy_std": 0.06508983323478823
+    },
+    "XGBoost": {
+      "accuracy_mean": 0.5473846153846154,
+      "accuracy_std": 0.07994909623107493
+    },
+    "LightGBM": {
+      "accuracy_mean": 0.5547692307692308,
+      "accuracy_std": 0.029248577571239727
+    },
+    "Ensemble (média)": {
+      "accuracy_mean": 0.5553846153846154,
+      "accuracy_std": 0.03904177704753698
+    }
+  },
+  "metodologia": "Média simples das probabilidades calibradas (sigmoid) de LogReg/XGBoost/LightGBM (Kaggle Book cap.9, \"Averaging models into an ensemble\"). Avaliado nas mesmas duas direções de split + 5-fold do dia17, para comparabilidade direta com os modelos individuais."
+}

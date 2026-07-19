@@ -1,0 +1,59 @@
+{
+  "dia": 4,
+  "models": {
+    "logistic_regression": {
+      "accuracy": 0.484375
+    },
+    "xgboost": {
+      "accuracy": 0.5625
+    },
+    "xgboost_optimized": {
+      "accuracy": 0.625
+    }
+  },
+  "features_count": 28,
+  "train_size": 64,
+  "test_size": 64,
+  "feature_importance_top10": [
+    {
+      "feature": "rank_diff",
+      "importance": 0.08791740238666534
+    },
+    {
+      "feature": "rank_x_round",
+      "importance": 0.07194141298532486
+    },
+    {
+      "feature": "avg_goals_by_round",
+      "importance": 0.06688688695430756
+    },
+    {
+      "feature": "round_num",
+      "importance": 0.06087261065840721
+    },
+    {
+      "feature": "home_avg_scored",
+      "importance": 0.05552299693226814
+    },
+    {
+      "feature": "rank_pts_diff",
+      "importance": 0.05519373342394829
+    },
+    {
+      "feature": "away_form_wins",
+      "importance": 0.050300028175115585
+    },
+    {
+      "feature": "home_avg_conceded",
+      "importance": 0.04826249182224274
+    },
+    {
+      "feature": "away_rank_pts",
+      "importance": 0.043578553944826126
+    },
+    {
+      "feature": "home_form_draws",
+      "importance": 0.041579268872737885
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "corr_gaps_por_feature": {
+    "rank_diff": {
+      "corr_2018_treino": 0.5362113074396336,
+      "corr_2022_teste": 0.34697875422814456,
+      "gap_abs": 0.18923255321148907
+    },
+    "home_rank": {
+      "corr_2018_treino": -0.35164781011652463,
+      "corr_2022_teste": -0.4543232220956564,
+      "gap_abs": -0.10267541197913177
+    },
+    "rank_ratio": {
+      "corr_2018_treino": 0.36288165518637144,
+      "corr_2022_teste": 0.30857177970789507,
+      "gap_abs": 0.05430987547847638
+    },
+    "rank_pts_diff": {
+      "corr_2018_treino": 0.5444894202715593,
+      "corr_2022_teste": 0.36064952279721263,
+      "gap_abs": 0.1838398974743467
+    },
+    "away_rank": {
+      "corr_2018_treino": 0.40135917170331714,
+      "corr_2022_teste": 0.06845880699351513,
+      "gap_abs": 0.332900364709802
+    }
+  },
+  "features_mais_afetadas": [
+    "away_rank",
+    "rank_diff"
+  ],
+  "feature_set_completo": [
+    "rank_diff",
+    "home_rank",
+    "rank_ratio",
+    "rank_pts_diff",
+    "away_rank"
+  ],
+  "feature_set_reduzido": [
+    "home_rank",
+    "rank_ratio",
+    "rank_pts_diff"
+  ],
+  "resultados_completo": {
+    "LogReg (isotonic)": {
+      "accuracy": 0.578125,
+      "rps": 0.2053848997825462
+    },
+    "LogReg (sigmoid)": {
+      "accuracy": 0.578125,
+      "rps": 0.20185775424455404
+    },
+    "XGBoost (isotonic)": {
+      "accuracy": 0.484375,
+      "rps": 0.22687377701694403
+    },
+    "XGBoost (sigmoid)": {
+      "accuracy": 0.5,
+      "rps": 0.21978609536664864
+    },
+    "LightGBM (isotonic)": {
+      "accuracy": 0.546875,
+      "rps": 0.20620889520487828
+    },
+    "LightGBM (sigmoid)": {
+      "accuracy": 0.5625,
+      "rps": 0.203216428033717
+    }
+  },
+  "resultados_reduzido": {
+    "LogReg (isotonic)": {
+      "accuracy": 0.578125,
+      "rps": 0.20830446559988572
+    },
+    "LogReg (sigmoid)": {
+      "accuracy": 0.59375,
+      "rps": 0.1976815600921349
+    },
+    "XGBoost (isotonic)": {
+      "accuracy": 0.484375,
+      "rps": 0.2439095363464732
+    },
+    "XGBoost (sigmoid)": {
+      "accuracy": 0.5,
+      "rps": 0.22049999270016107
+    },
+    "LightGBM (isotonic)": {
+      "accuracy": 0.546875,
+      "rps": 0.19742539293007932
+    },
+    "LightGBM (sigmoid)": {
+      "accuracy": 0.546875,
+      "rps": 0.20283497806573134
+    }
+  },
+  "deltas": {
+    "LogReg (isotonic)": {
+      "delta_accuracy": 0.0,
+      "delta_rps": 0.0029195658173395145
+    },
+    "LogReg (sigmoid)": {
+      "delta_accuracy": 0.015625,
+      "delta_rps": -0.004176194152419155
+    },
+    "XGBoost (isotonic)": {
+      "delta_accuracy": 0.0,
+      "delta_rps": 0.017035759329529165
+    },
+    "XGBoost (sigmoid)": {
+      "delta_accuracy": 0.0,
+      "delta_rps": 0.000713897333512431
+    },
+    "LightGBM (isotonic)": {
+      "delta_accuracy": 0.0,
+      "delta_rps": -0.00878350227479896
+    },
+    "LightGBM (sigmoid)": {
+      "delta_accuracy": -0.015625,
+      "delta_rps": -0.00038144996798566977
+    }
+  },
+  "delta_medio_acuracia": 0.0,
+  "metodologia": "Gap de correlação |corr_2018| - |corr_2022| por feature (fingerprint de vazamento, generaliza §9.4c que só olhava rank_diff). Remove as 2 features com maior gap e re-roda o pipeline do dia10 (mesmo split/seed/6 combos) para quantificar quanto da acurácia/RPS reportados depende do sinal potencialmente inflado pelo ranking único."
+}

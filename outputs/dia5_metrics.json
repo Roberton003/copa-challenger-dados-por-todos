@@ -1,0 +1,49 @@
+{
+  "dia": 5,
+  "models": {
+    "LogReg (baseline)": {
+      "accuracy": 0.59375,
+      "home_pct": 0.421875,
+      "draw_pct": 0.234375,
+      "away_pct": 0.34375
+    },
+    "XGBoost": {
+      "accuracy": 0.625,
+      "home_pct": 0.421875,
+      "draw_pct": 0.140625,
+      "away_pct": 0.4375
+    },
+    "LightGBM (balanced)": {
+      "accuracy": 0.59375,
+      "home_pct": 0.359375,
+      "draw_pct": 0.203125,
+      "away_pct": 0.4375
+    },
+    "LightGBM (normal)": {
+      "accuracy": 0.640625,
+      "home_pct": 0.40625,
+      "draw_pct": 0.171875,
+      "away_pct": 0.421875
+    },
+    "Ensemble (soft)": {
+      "accuracy": 0.625,
+      "home_pct": 0.375,
+      "draw_pct": 0.1875,
+      "away_pct": 0.4375
+    },
+    "Ensemble + Threshold (0.20)": {
+      "accuracy": 0.59375,
+      "home_pct": 0.296875,
+      "draw_pct": 0.375,
+      "away_pct": 0.328125
+    }
+  },
+  "best_model": "LightGBM (normal)",
+  "best_accuracy": 0.640625,
+  "draw_problem": {
+    "real_draw_pct": 0.234375,
+    "lgb_balanced_draw_pct": 0.203125,
+    "ensemble_draw_pct": 0.1875,
+    "threshold_draw_pct": 0.375
+  }
+}

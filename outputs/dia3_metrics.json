@@ -1,0 +1,25 @@
+{
+  "dia": 3,
+  "modelos": {
+    "Poisson": {
+      "accuracy": 0.2459016393442623
+    },
+    "LogisticRegression": {
+      "accuracy": 0.5737704918032787
+    }
+  },
+  "baseline_random": 0.3333333333333333,
+  "features": [
+    "rank_pts_diff",
+    "rank_num_diff",
+    "home_rank_pts",
+    "away_rank_pts",
+    "home_avg_scored",
+    "home_avg_conceded",
+    "round_num"
+  ],
+  "split": {
+    "treino": "2018",
+    "teste": "2022"
+  }
+}
