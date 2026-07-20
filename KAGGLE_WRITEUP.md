@@ -55,7 +55,7 @@ A regressao logistica e fragil a direcao do split; LightGBM e o mais estavel. No
 
 ## 4. Habilidade Tecnica
 
-Foram testadas 6 combinacoes de modelo x calibracao:
+Foram testadas diversas combinacoes de modelo x calibracao; no Kaggle v3 reportamos os 4 melhores resultados com sigmoid:
 
 | Modelo | Calibracao | Acuracia | RPS |
 |---|---|---|---|
