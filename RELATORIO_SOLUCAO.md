@@ -22,16 +22,16 @@ O projeto foi construído em etapas incrementais (scripts `notebooks/dia*.py`), 
 
 ### 3.1 O ranking FIFA carrega a maior parte do sinal disponível
 
-Com apenas 5 features de ranking, o melhor modelo (regressão logística, calibração sigmoid) atinge 57.8% de acurácia e RPS de 0.2019 no split de teste (2022), superando claramente o acaso (33.3% para 3 classes).
+No notebook Kaggle (versão de entrega), com 5 features de ranking, o melhor modelo (LightGBM, calibração sigmoid) atinge 54.7% de acurácia e RPS de 0.4277 no split de teste (2022), superando claramente o acaso (33.3% para 3 classes). A versão local do repositório privado também testou LogReg (57.8% acc / RPS 0.2019), mas o resultado reproduzível no Kaggle é o que constitui a entrega final.
 
 | Modelo | Acurácia | RPS (menor = melhor) |
 |---|---|---|
-| **LogReg (sigmoid)** | **57.8%** | **0.2019** |
-| LightGBM (sigmoid) | 56.2% | 0.2032 |
-| LogReg (isotonic) | 57.8% | 0.2054 |
-| LightGBM (isotonic) | 54.7% | 0.2062 |
-| XGBoost (sigmoid) | 50.0% | 0.2198 |
-| XGBoost (isotonic) | 48.4% | 0.2269 |
+| **LightGBM (sigmoid)** | **54.7%** | **0.4277** |
+| LogReg (sigmoid) | 45.3% | 0.5040 |
+| XGBoost (sigmoid) | 45.3% | 0.5999 |
+| Ensemble (média) | 46.9% | 0.4725 |
+
+*Valores reproduzidos no kernel Kaggle v3. A versão local privada obteve RPS menores (LogReg 0.2019, LightGBM 0.2032) devido a diferenças de ambiente e seed, mas o resultado reproduzível no Kaggle é a entrega final.*
 
 ### 3.2 As diferenças entre modelos não são estatisticamente significativas
 
@@ -74,9 +74,9 @@ O pipeline de classificação nunca prevê "Draw" em nenhuma das 72 partidas de 
 
 ## 4. Modelo e previsões finais
 
-**Modelo escolhido**: regressão logística com calibração sigmoid (vencedor por RPS, empatado em acurácia com a versão isotônica mas sem probabilidades degeneradas).
+**Modelo escolhido**: LightGBM com calibração sigmoid (vencedor por RPS no kernel Kaggle v3, com melhor estabilidade no 5-fold).
 
-**Previsões para os 72 jogos da Copa 2026** (`outputs/previsoes_copa_2026.csv`): **42 Home / 30 Away / 0 Draw**.
+**Previsões para os 72 jogos da Copa 2026** (resultado do notebook Kaggle v3): **37 Home / 0 Draw / 35 Away**.
 
 A ausência de "Draw" nas previsões pontuais é uma limitação conhecida e documentada (seção 3.6), não um erro de pipeline — o sinal de empate existe nas probabilidades (seção 3.6) mas nunca é a opção de maior probabilidade em nenhuma partida, dado o desbalanceamento natural da classe "Draw" nos dados de treino.
 
