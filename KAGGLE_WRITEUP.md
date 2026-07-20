@@ -45,11 +45,11 @@ Tres lacunas de validacao foram fechadas explicitamente:
 
 | Modelo | Original (2018->2022) | Invertido (2022->2018) | 5-fold (media +- desvio) |
 |---|---|---|---|
-| LogReg | 57.8% | 39.1% | 50.8% +- 6.5% |
-| XGBoost | 50.0% | 50.0% | 54.7% +- 8.0% |
-| LightGBM | 56.2% | 59.4% | 55.5% +- 2.9% |
+| LogReg | 45.3% | - | 50.8% +- 6.5% |
+| XGBoost | 45.3% | - | 54.7% +- 8.0% |
+| LightGBM | 54.7% | - | 55.5% +- 2.9% |
 
-A regressao logistica e fragil a direcao do split; LightGBM e o mais estavel. Por isso, a estimativa de 5-fold e mais confiavel do que a acuracia em um unico split.
+A regressao logistica e fragil a direcao do split; LightGBM e o mais estavel. No kernel Kaggle v3 usamos o split original 2018->2022 para selecionar o modelo final.
 
 ---
 
@@ -59,15 +59,13 @@ Foram testadas 6 combinacoes de modelo x calibracao:
 
 | Modelo | Calibracao | Acuracia | RPS |
 |---|---|---|---|
-| LogReg | Sigmoid | 57.8% | 0.2019 |
-| LightGBM | Sigmoid | 56.2% | 0.2032 |
-| LogReg | Isotonic | 57.8% | 0.2054 |
-| LightGBM | Isotonic | 54.7% | 0.2062 |
-| XGBoost | Sigmoid | 50.0% | 0.2198 |
-| XGBoost | Isotonic | 48.4% | 0.2269 |
+| **LightGBM** | **Sigmoid** | **54.7%** | **0.4277** |
+| Ensemble Média | Sigmoid | 46.9% | 0.4725 |
+| LogReg | Sigmoid | 45.3% | 0.5040 |
+| XGBoost | Sigmoid | 45.3% | 0.5999 |
 
-- Isotonic foi rejeitada porque gerava probabilidades degeneradas (ex: 0.99997 / 0.00002 / 0.00001) em holdout pequeno — classico sinal de overfitting.
-- Sigmoid foi escolhida por produzir distribuicoes de probabilidade mais honestas.
+- LightGBM com sigmoid foi selecionado como modelo final no Kaggle v3 por minimizar RPS no split 2018→2022.
+- Isotonic foi rejeitada durante a pesquisa porque gerava probabilidades degeneradas (ex: 0.99997 / 0.00002 / 0.00001) em holdout pequeno — classico sinal de overfitting.
 - Tambem testamos PyTorch (MLP), ensemble por media de probabilidades e regressao de Poisson nos gols como respostas as fragilidades identificadas.
 
 ---
