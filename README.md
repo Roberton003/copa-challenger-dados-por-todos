@@ -79,7 +79,7 @@ Regressão logística com calibração sigmoid, vencedora por RPS entre 6 combin
 | LightGBM (sigmoid) | 56.2% | 0.2032 |
 | XGBoost (sigmoid) | 50.0% | 0.2198 |
 
-**Previsões para os 72 jogos da Copa 2026:** 42 Home / 30 Away / 0 Draw — a ausência de empates na previsão pontual é uma limitação conhecida e documentada, não um erro de pipeline (ver `RELATORIO_SOLUCAO.md`, seção 3.6).
+**Previsões para os 72 jogos da Copa 2026:** 42 Home / 30 Away / 0 Draw — a ausência de empates na previsão pontual é uma limitação conhecida e documentada, não um erro de pipeline. Em Copas reais, cerca de 22–25% dos jogos de primeira fase terminam empatados, mas o classificador pontual escolhe sempre Home ou Away porque Draw nunca vence o argmax. Testamos threshold tuning para forçar empates, mas qualquer threshold que gera empates piora a acurácia geral. O modelo de Poisson nos gols, por outro lado, indica P(Draw) médio de 23.1% no teste, confirmando que o sinal de empate existe e é coerente com a realidade do futebol. Mantivemos a previsão pontual do classificador principal por consistência metodológica e documentamos a limitação como decisão consciente (ver `RELATORIO_SOLUCAO.md`, seção 3.6).
 
 ![Confiança das previsões 2026](outputs/visualizations/08_confianca_previsoes_2026.png)
 

@@ -101,7 +101,7 @@ Foram testadas 6 combinacoes de modelo x calibracao:
 
 ## 8. Limitacoes e Decisoes Rejeitadas
 
-1. Nenhum modelo preve Draw na previsao pontual (42 Home / 30 Away / 0 Draw). Nao e bug: e comportamento esperado de classificadores com classe desbalanceada. Poisson indica P(Draw) medio de 23.1%, mas ainda nao vence o argmax.
+1. **Ausencia de empates na previsao pontual (37 Home / 0 Draw / 35 Away no Kaggle).** Nao e bug: e comportamento esperado de classificadores multiclasse quando a classe Draw tem probabilidade consistentemente menor que Home e Away. Testamos threshold tuning para forcar empates, mas ele piora a acuracia geral — por isso foi rejeitado. O modelo alternativo de Poisson nos gols indica P(Draw) medio de 23.1% no teste, confirmando que o sinal de empate existe, mas o argmax do classificador pontual nao o captura. Uma correcao classica seria Dixon-Coles (1997), fora do escopo desta entrega. Portanto, mantivemos a previsao pontual do classificador principal e documentamos a limitacao como decisao consciente.
 2. Threshold tuning para Draw foi testado e rejeitado: piora a acuracia geral.
 3. Diferencas entre modelos nao sao estatisticamente significativas com n=64.
 4. Vazamento temporal do ranking existe, mas nao explica o resultado.
